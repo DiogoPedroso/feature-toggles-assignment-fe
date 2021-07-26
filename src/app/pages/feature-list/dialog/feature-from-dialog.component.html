@@ -1,0 +1,66 @@
+<div class="container">
+  <div mat-dialog-content>
+    <form [formGroup]="featureForm" class="row">
+      <div class="pb-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Display Name</mat-label>
+          <input matInput formControlName="displayName" />
+        </mat-form-field>
+      </div>
+      <div class="pb-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Technical Name</mat-label>
+          <input matInput formControlName="technicalName" />
+        </mat-form-field>
+      </div>
+      <div class="pb-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+          <input matInput formControlName="description" />
+        </mat-form-field>
+      </div>
+      <div class="pb-3">
+        <mat-form-field appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="datepicker"
+            formControlName="expiresOn"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="datepicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+              <button mat-button matDatepickerCancel>Cancel</button>
+              <button mat-raised-button color="primary" matDatepickerApply>
+                Apply
+              </button>
+            </mat-datepicker-actions>
+          </mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="pb-3">
+        <div class="mat-form-field fill">
+          <mat-checkbox formControlName="inverted">Inverted</mat-checkbox>
+        </div>
+      </div>
+      <div class="pb-3">
+        <mat-label>Customer Ids: </mat-label>
+        <div formArrayName="customerIds">
+          <div *ngFor="let id of customerIds.controls; let i = index">
+            <input matInput [formControlName]="i" />
+          </div>
+        </div>
+        <button mat-button (click)="addCustomerIdLine()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </form>
+    <div mat-dialog-actions>
+      <button mat-raised-button (click)="close(false)" color="primary">Cancel</button>
+      <button mat-raised-button (click)="close(true)" color="primary">Ok</button>
+    </div>
+  </div>
+</div>
