@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
       })
       .catch((err) => {
         this.errorMessage = err.message == 'not_admin' ? 'This user is not admin' : 'Bad username/password';
+        this.errorMessage = this.errorMessage.trim();
         this.loginInvalid = true;
         this.loginForm.reset();
       });
