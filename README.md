@@ -1,6 +1,8 @@
 # FeatureToggle
 
-The Frontend portion of the "Feature Toggles assignment", it contains a Login page that requires the ["Authorization" micro-service](https://github.com/DiogoPedroso/feature-toggles-be-authentication-microservice) to be running for authentication and authorization and the ["Feature Toggle" micro-service](https://github.com/DiogoPedroso/feature-toggles-be-features-microservice) to access the toggle-feature. Only the "userAdmin" (or any other hardcoded users with the "ROLE_ADMIN" role) has priviledges to access the Frontend. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
+The Frontend portion of the "Feature Toggles assignment", it contains a Login page that requires the ["Authorization" micro-service](https://github.com/DiogoPedroso/feature-toggles-be-authentication-microservice) to be running for authentication and authorization and the ["Feature Toggle" micro-service](https://github.com/DiogoPedroso/feature-toggles-be-features-microservice) to access the toggle-feature. Only the "userAdmin" (or any other hardcoded users with the "ROLE_ADMIN" role) has priviledges to access the Frontend. Update the environment variable files according to your environment's config.
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
 
 ## Setup
 
